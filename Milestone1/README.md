@@ -1,49 +1,88 @@
 # Milestone 1 — User Authentication Module
 
-**Infosys Springboard 7.0 — Intelligent Freight Quote Generation**
+**Infosys Springboard 7.0 · Intelligent Freight Quote Generation**
+Mentor: Mohamedsipli M
+Author: Sravya Nanda
 
-## What This Milestone Is
-This milestone builds the authentication layer for the Freight Quote Generation system: a Login, Signup, and Forgot Password flow, running as a Streamlit app inside Google Colab and exposed publicly through ngrok.
+## What this is
 
-## Features Built
-- **Login** — Username/Email + Password. Issues a JWT session token on success. Shows a single generic error on failure (doesn't reveal whether the username or password was wrong).
-- **Signup** — Username, Email, Password, Confirm Password, Security Question (chosen from a fixed list), Security Answer. Rejects duplicate usernames/emails.
-- **Forgot Password** — two recovery routes:
-  - *Security Question* — verify the stored answer, then set a new password.
-  - *Email OTP* — a 6-digit one-time code is emailed via Gmail SMTP, expires in 5 minutes.
-- **JWT session handling** — token issued only at login; Signup and password-reset both route back to Login for a fresh token.
-- **Field validation** — all fields mandatory; email format checked; password requires 8+ characters, upper/lowercase, a number, and a special symbol.
-- **User Dashboard** — welcome message with logout.
-- **Admin Dashboard** — separate hardcoded admin login; lists all registered users (username/email only, no password data).
+Before the freight quote system can do anything useful, users need a way to sign up, log in, and get back into their account if they forget their password. That's what this milestone builds — a full authentication system running as a Streamlit app inside Google Colab, made public through ngrok.
 
-## Tech Stack
-- Streamlit (UI)
-- PyJWT (session tokens)
-- bcrypt (password hashing)
-- SQLite (user storage)
-- smtplib / Gmail SMTP (OTP delivery)
-- pyngrok (public URL tunnel)
-- Google Colab (hosting/runtime)
+## What's built
 
-## How to Run
-1. Open `Milestone1_Auth_Module.ipynb` in Google Colab.
-2. Add these secrets in the Colab Secrets tab (key icon, left sidebar), enabling notebook access for each:
-   - `JWT_SECRET` — any long random string
-   - `NGROK_AUTHTOKEN` — from your ngrok.com dashboard
-   - `EMAIL_ADDRESS` — the Gmail address that sends OTPs
-   - `EMAIL_PASSWORD` — a Gmail App Password (requires 2-Step Verification)
-3. Run the cells top to bottom.
-4. Open the printed ngrok URL in your browser.
-5. Admin login: username `admin`, password `Admin@123` (hardcoded in code — change if required).
+- **Login** with username or email + password. A generic error shows on failure so it never gives away whether the username or password was wrong.
+- **Signup** with username, email, password, confirm password, and a security question picked from a fixed list. Duplicate usernames or emails get rejected.
+- **Forgot Password**, with two ways to recover: answering your security question, or getting a 6-digit OTP sent to your email (expires in 5 minutes).
+- **JWT session handling** — a token is issued only when you log in, so signup and password resets always send you back to the login page for a fresh session.
+- **User dashboard** showing a welcome message and a logout button.
+- **Admin dashboard** with its own separate hardcoded login, showing the list of all registered users (no passwords ever shown).
+- Basic validation everywhere: no empty fields, a real-looking email format, and passwords need 8+ characters with a mix of upper/lowercase, a number, and a special character.
+
+## Tech stack
+
+- Streamlit
+- PyJWT
+- bcrypt
+- SQLite
+- Gmail SMTP (for OTP emails)
+- pyngrok
+- Google Colab
+
+## How to run it
+
+1. Open `Milestone1_Auth_Module.ipynb` in Colab.
+2. Add 4 secrets under the key icon (Colab Secrets), with notebook access turned on for each: `JWT_SECRET` (any random string), `NGROK_AUTHTOKEN` (from ngrok.com), `EMAIL_ADDRESS`, and `EMAIL_PASSWORD` (a Gmail App Password, not your regular password).
+3. Run all three cells top to bottom.
+4. Open the ngrok URL it prints out.
+
+Note: every fresh Colab session starts with an empty database, so you'll need to sign up a test account again after any restart.
 
 ## Screenshots
-_Add screenshots here and reference them, e.g.:_
 
-- Login: `screenshots/login.png`
-- Signup: `screenshots/signup.png`
-- Forgot Password — Security Question: `screenshots/forgot_security_question.png`
-- Forgot Password — OTP: `screenshots/forgot_otp.png`
-- OTP Email received: `screenshots/otp_email.png`
-- User Dashboard: `screenshots/user_dashboard.png`
-- Admin Dashboard: `screenshots/admin_dashboard.png`
+### Login
+
+
+![Login](screenshots/login.png)
+
+
+
+### Signup
+
+
+![Signup](screenshots/signup.png)
+
+
+
+### Forgot Password — Security Question
+
+
+![Forgot Password - Security Question](screenshots/forgot_security_question.png)
+
+
+
+### Forgot Password — OTP
+
+
+![Forgot Password - OTP](screenshots/forgot_otp.png)
+
+
+
+### OTP Email
+
+
+![OTP Email](screenshots/otp_email.png)
+
+
+
+### User Dashboard
+
+
+![User Dashboard](screenshots/user_dashboard.png)
+
+
+
+### Admin Dashboard
+
+
+![Admin Dashboard](screenshots/admin_dashboard.png)
 
