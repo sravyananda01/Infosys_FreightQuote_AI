@@ -1,7 +1,9 @@
 # Milestone 1 — User Authentication Module
 
 **Infosys Springboard 7.0 · Intelligent Freight Quote Generation**
+
 Mentor: Mohamedsipli M
+
 Author: Sravya Nanda
 
 ## What this is
@@ -84,5 +86,5 @@ Note: every fresh Colab session starts with an empty database, so you'll need to
 ### Admin Dashboard
 
 
-![Admin Dashboard](screenshots/admin_dashboard.png)
+![Admin Dashboard](screenshot/admin_dashboard.png)
 
