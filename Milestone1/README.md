@@ -42,42 +42,42 @@ Note: every fresh Colab session starts with an empty database, so you'll need to
 ### Login
 
 
-![Login](screenshots/login.png)
+![Login](screenshot/login.png)
 
 
 
 ### Signup
 
 
-![Signup](screenshots/signup.png)
+![Signup](screenshot/signup.png)
 
 
 
 ### Forgot Password — Security Question
 
 
-![Forgot Password - Security Question](screenshots/forgot_security_question.png)
+![Forgot Password - Security Question](screenshot/forgot_security_question.png)
 
 
 
 ### Forgot Password — OTP
 
 
-![Forgot Password - OTP](screenshots/forgot_otp.png)
+![Forgot Password - OTP](screenshot/forgot_otp.png)
 
 
 
 ### OTP Email
 
 
-![OTP Email](screenshots/otp_email.png)
+![OTP Email](screenshot/otp_email.png)
 
 
 
 ### User Dashboard
 
 
-![User Dashboard](screenshots/user_dashboard.png)
+![User Dashboard](screenshot/user_dashboard.png)
 
 
 
