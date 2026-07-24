@@ -79,7 +79,7 @@ Note: every fresh Colab session starts with an empty database, so you'll need to
 ### User Dashboard
 
 
-![User Dashboard](screenshot/user_dashboard.png)
+![User Dashboard](screenshot/user_dashboard.png)(screenshot/user_dashboard1.png)(screenshot/user_dashboard2.png)
 
 
 
